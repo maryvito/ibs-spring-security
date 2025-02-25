@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lab-01-exercise" />
+        <module name="lab-07-solution" />
+        <module name="lab-05-solution" />
+        <module name="lab-06-start" />
+        <module name="lab-08-start-old" />
+        <module name="lab-05-start" />
+        <module name="lab-02-solution" />
+        <module name="lab-09-start" />
+        <module name="lab-06-solution" />
+        <module name="lab-09-solution" />
+        <module name="lab-03-start" />
+        <module name="lab-03-log-custom-filter" />
+        <module name="lab-02-start" />
+        <module name="lab-08-start" />
+        <module name="lab-04-start" />
+        <module name="lab-03-solution" />
+        <module name="lab-08-solution-old" />
+        <module name="lab-05-disable-all-filters" />
+        <module name="lab-04-solution" />
+        <module name="lab-01-old" />
+        <module name="lab-08-solution" />
+        <module name="lab-07-start" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lab-01-exercise" options="-parameters" />
+      <module name="lab-01-old" options="-parameters" />
+      <module name="lab-02-solution" options="-parameters" />
+      <module name="lab-02-start" options="-parameters" />
+      <module name="lab-03-log-custom-filter" options="-parameters" />
+      <module name="lab-03-solution" options="-parameters" />
+      <module name="lab-03-start" options="-parameters" />
+      <module name="lab-04-solution" options="-parameters" />
+      <module name="lab-04-start" options="-parameters" />
+      <module name="lab-05-disable-all-filters" options="-parameters" />
+      <module name="lab-05-solution" options="-parameters" />
+      <module name="lab-05-start" options="-parameters" />
+      <module name="lab-06-solution" options="-parameters" />
+      <module name="lab-06-start" options="-parameters" />
+      <module name="lab-07-solution" options="-parameters" />
+      <module name="lab-07-start" options="-parameters" />
+      <module name="lab-08-solution" options="-parameters" />
+      <module name="lab-08-solution-old" options="-parameters" />
+      <module name="lab-08-start" options="-parameters" />
+      <module name="lab-08-start-old" options="-parameters" />
+      <module name="lab-09-solution" options="-parameters" />
+      <module name="lab-09-start" options="-parameters" />
+    </option>
+  </component>
+</project>
