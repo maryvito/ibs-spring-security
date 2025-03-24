@@ -77,7 +77,7 @@ create table acl_entry
     granting            boolean not null,
     audit_success       boolean not null,
     audit_failure       boolean not null,
-    constraint unique_uk_4 unique (acl_object_identity, ace_order),
+    --constraint unique_uk_4 unique (acl_object_identity, ace_order),
     constraint foreign_fk_4 foreign key (acl_object_identity) references acl_object_identity (id),
     constraint foreign_fk_5 foreign key (sid) references acl_sid (id)
 );
@@ -116,8 +116,12 @@ VALUES (1, 1, 1001, NULL, -300, 0),
        (3, 1, 1003, NULL, -300, 0);
 
 INSERT INTO acl_entry (id, acl_object_identity, ace_order, sid, mask, granting, audit_success, audit_failure)
-VALUES (1, 1, 1, -100, 1, 1, 1, 1),
-       (2, 1, 3, -300, 1, 1, 1, 1),
-       (3, 2, 1, -200, 1, 1, 1, 1),
-       (4, 2, 2, -300, 1, 1, 1, 1),
-       (5, 3, 1, -300, 1, 1, 1, 1);
+VALUES
+       (1, 1, 1, -100, 1, 0, 1, 1),
+       (2, 1, 1, -200, 1, 1, 1, 1),
+       (3, 1, 3, -300, 1, 1, 1, 1),
+       (4, 2, 1, -100, 1, 1, 1, 1),
+       (5, 2, 2, -200, 1, 0, 1, 1),
+       (6, 2, 3, -300, 1, 1, 1, 1),
+       (7, 3, 1, -200, 1, 1, 1, 1),
+       (8, 3, 2, -100, 1, 1, 1, 1);

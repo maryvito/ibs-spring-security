@@ -24,6 +24,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    @PreAuthorize("hasRole('MANAGER')")
     @Transactional(readOnly = true)
     public User getById(long userId) {
         return userRepository.findById(userId)

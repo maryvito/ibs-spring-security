@@ -1,0 +1,28 @@
+server.port: 8090
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+
+spring:
+  datasource:
+    url: "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+  jpa:
+    defer-datasource-initialization: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:18080/realms/application
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:18080/realms/application
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: springsecurity
+            client-secret: aSABCBNHeAeaSbPqUIvnNThGMWKfCD9y
+            scope: openid

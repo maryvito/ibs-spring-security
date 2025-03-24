@@ -31,7 +31,7 @@ public class CompanyService {
                 .orElseThrow(() -> new IllegalArgumentException("User does not exist"));
         return user.getCompanies();
     }
-
+    @Secured("ROLE_ADMIN")
     @Transactional(readOnly = true)
     public Company getById(long companyId) {
         return companyRepository.findById(companyId)

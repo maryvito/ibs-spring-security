@@ -1,6 +1,8 @@
 package com.luxoft.spingsecurity.security;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -12,7 +14,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final AccessDecisionManager accessAffirmativeBased;
+    private final AccessDecisionManager accessUnanimousBased;
+
 
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
     @Autowired
@@ -30,8 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeRequests()
+                //.accessDecisionManager(accessAffirmativeBased)
+                .accessDecisionManager(accessUnanimousBased)
             .antMatchers("/company/**", "/user/**").authenticated()
-            .antMatchers("/info").permitAll()
+            .antMatchers("/info", "/actuator/env").permitAll()
             .antMatchers("/**").denyAll()
             .and()
             .httpBasic();
